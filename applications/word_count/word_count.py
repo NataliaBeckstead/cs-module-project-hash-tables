@@ -1,6 +1,19 @@
 def word_count(s):
-    # Your code here
+    counts = {}
+    words = s.lower().split()
+    ignoring = '":;,.-+=/\\|[]{}()*^&'
 
+    for word in words:
+        for i in ignoring:
+            if i in word:
+                word = word.replace(i, '')
+        if word in counts:
+            counts[word] += 1
+        else:
+            if len(word) > 0:
+                counts[word] = 1
+
+    return counts
 
 
 if __name__ == "__main__":
