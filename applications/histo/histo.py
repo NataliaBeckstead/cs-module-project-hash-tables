@@ -42,3 +42,4 @@ for i in sorted_histo:
     sorted_histo[i].sort()
     for j in sorted_histo[i]:
         print(j)
+
