@@ -1,8 +1,16 @@
 # Your code here
-
+cash = {}
 
 def expensive_seq(x, y, z):
-    # Your code here
+    key = str((x,y,z))
+    if x <= 0:
+        return y + z
+    else:
+        if key in cash:
+            return cash[key]
+            
+    cash[key] = expensive_seq(x-1, y+1, z) + expensive_seq(x-2, y+2, z*2) + expensive_seq(x-3, y+3, z*3)
+    return cash[key]
 
 
 
